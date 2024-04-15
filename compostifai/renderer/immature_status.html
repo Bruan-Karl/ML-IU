@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        @font-face {
+            font-family: 'Open Sans Bold';
+            src: url('./fonts/OpenSans-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Open Sans Condensed Light Medium';
+            src: url('./fonts/OpenSans-Medium.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        body {
+            background-color: #8C52FF;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            padding-bottom: 50px;
+        }
+
+  
+
+        #landing-page-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 10vh; 
+            padding: 0 2em;
+        }
+
+        img {
+            width: 40vw; 
+            max-width: 100%;
+            height: auto; 
+            margin-right: 2em;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row; 
+        }
+        .button-group {
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            margin-right: 2em; 
+        }
+
+        button {
+            margin: 0.5vh;
+            font-size: 1.9em;
+            background-color: #C1FF72;
+            color: #8C52FF;
+            border: none;
+            border-radius: 18px;
+            cursor: pointer;
+            width: 8em;
+            padding: 1vh 2vh;
+            font-family: 'Open Sans Bold', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #8C52FF;
+            color: white;
+            border: 2px solid #C1FF72;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="landing-page-container">
+        <h1 id="choose-method">Sorry, your compost is classified as Immature. </h1>
+        <h1 id="choose-method">Your compost requires for further maturation, continue process?</h1>
+        <div class="button-container">
+            <div class="button-group">
+                
+                <button id="yes-btn"  onclick="YesButtonClick()">YES</button>
+            </div>
+            <div class="button-group">
+    
+                <button id="no-btn"  onclick="NoButtonClick()">NO</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function YesButtonClick() {
+            window.ipcRenderer.send('#');
+            window.close();
+        }
+
+        function NoButtonClick() {
+            window.ipcRenderer.send('#');
+            window.close();
+        }
+
+    </script>
+
+
+
+</body>
+</html>
